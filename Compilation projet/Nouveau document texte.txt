@@ -1,0 +1,20 @@
+entier $t[10], entier $a; # déclaration de variables globales
+
+f(entier $a, entier $b)   # déclaration d'une fonction à deux args
+entier $c, entier $k;     # déclaration de deux variables locales
+{ # début d'un bloc d'instruction
+	$k = $a + $b;# affectation et expression arithmétique
+	retour $k;# valeur de retour de la fonction
+}# fin du bloc d'instruction
+
+
+main()# point d'entrée dans le programme
+entier $d;
+{
+	$a = lire();# appel à la fonction lire
+	tantque 0 < $a faire {  # instruction tantque avec expression
+		$d = f($d, 2 * $a);   # affectation et appel de fonction
+		ecrire($d + 1);# appel de la fonction prédéfinie ecrire
+		$a = $a - 1;
+	}
+}
